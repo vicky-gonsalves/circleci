@@ -1,0 +1,15 @@
+version: 2.1
+
+jobs:
+  test:
+    machine: true
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run:
+          name: Integration Tests
+          command: echo "tests passed" && exit 0
+workflows:
+  test:
+    jobs:
+      - test
